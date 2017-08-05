@@ -219,6 +219,7 @@ gulp.task('configDev', function() {
             environment: 'local'
         }))
         .pipe(gulp.dest('frontend/dist/js'))
+        .pipe(gulp.dest('frontend/src/js'));
 });
 
 // config for staging server
@@ -229,7 +230,7 @@ gulp.task('configStaging', function() {
         }))
         .pipe(gulp_if(flags.production, rename({ suffix: '.min' })))
         .pipe(gulp_if(flags.production, uglify()))
-        .pipe(gulp.dest('frontend/dist/js'))
+        .pipe(gulp.dest('frontend/dist/js'));
 });
 
 // config for prod server
